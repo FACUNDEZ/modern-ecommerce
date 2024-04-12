@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "postman.postman-for-vscode"
+  ],
+  "unwantedRecommendations": []
+}

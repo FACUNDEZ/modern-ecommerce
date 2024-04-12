@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { WavyBackgroundDemo } from "../components/Hero";
+import { Featured } from "../components/Featured"
+import Categories from "../components/Categories";
+import Offers from "../components/Offers";
+---
+
+<Layout title="Welcome to Astro.">
+	<main class="overflow-x-hidden -z-10">
+		<!-- Hero  -->
+		<WavyBackgroundDemo client:load />
+		<!-- Hero  -->
+
+		<!-- Products -->
+		<Featured client:load />
+		<!-- Products -->
+
+		<!-- Categories -->
+		<Categories client:load />
+		<!-- Categories -->
+
+		<!-- Offers -->
+		<Offers client:load  />
+		<!-- Offers -->
+	</main>
+</Layout>
