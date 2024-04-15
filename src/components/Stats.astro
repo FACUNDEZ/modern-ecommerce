@@ -1,0 +1,97 @@
+<div id="stats" class="py-8">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <dl
+            class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3"
+        >
+            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt class="text-base leading-7 font-medium">Products Available</dt>
+                <dd
+                    class="order-first text-3xl font-bold tracking-tight sm:text-5xl"
+                >
+                    <span
+                        class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-transactions)] before:content-[counter(num)]"
+                    >
+                        <span class="sr-only">100</span>
+                    </span>
+                </dd>
+            </div>
+            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt class="text-base leading-7 font-medium">Average Order Value</dt>
+                <dd
+                    class="order-first text-3xl font-bold tracking-tight sm:text-5xl"
+                >
+                    $<span
+                        class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-assets)] before:content-[counter(num)]"
+                    >
+                        <span class="sr-only">$50</span>
+                    </span>
+                </dd>
+            </div>
+            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt class="text-base leading-7 font-medium">Happy Customers</dt>
+                <dd
+                    class="order-first text-3xl font-bold tracking-tight sm:text-5xl"
+                >
+                    <span
+                        class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-users)] before:content-[counter(num)] before:left-[calc(0.4em * var(--n, 1))]"
+                    >
+                        <span class="sr-only">1500</span>+
+                    </span>
+                </dd>
+            </div>
+            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt class="text-base leading-7 font-medium">Customer Satisfaction Rate</dt>
+                <dd
+                    class="order-first text-3xl font-bold tracking-tight sm:text-5xl"
+                >
+                    <span
+                        class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-users-rate)] before:content-[counter(num)] before:left-[calc(0.4em * var(--n, 1))]"
+                    >
+                        <span class="sr-only">90</span>%
+                    </span>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
+
+<style>
+    @property --num-transactions {
+        syntax: "<integer>";
+        initial-value: 0;
+        inherits: false;
+    }
+
+    @property --num-assets {
+        syntax: "<integer>";
+        initial-value: 0;
+        inherits: false;
+    }
+
+    @property --num-users {
+        syntax: "<integer>";
+        initial-value: 0;
+        inherits: false;
+    }
+
+    @property --num-users-rate {
+        syntax: "<integer>";
+        initial-value: 0;
+        inherits: false;
+    }
+
+    @keyframes counter {
+        from {
+            --num-transactions: 0;
+            --num-assets: 0;
+            --num-users: 0;
+            --num-users-rate: 0;
+        }
+        to {
+            --num-transactions: 100;
+            --num-assets: 50;
+            --num-users: 1500;
+            --num-users-rate: 90;
+        }
+    }
+</style>

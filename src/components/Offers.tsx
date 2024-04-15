@@ -49,8 +49,8 @@ function Offers() {
     };
 
     return (
-        <section className="mt-24 pb-20">
-            <hr className="mb-16 border border-gray-600" />
+        <section className="mt-20 pb-20">
+            <hr className="mb-14 border border-gray-600" />
             <h1 className="text-2xl md:text-4xl lg:text-5xl text-customGray font-bold text-center mb-10">Offers</h1>
             <div
                 className="flex flex-row justify-between items-center gap-x-7 overflow-x-hidden mx-7"
