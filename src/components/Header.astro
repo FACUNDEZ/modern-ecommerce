@@ -1,33 +1,32 @@
 ---
-import MenuIcon from '../icons/MenuIcon.astro'
-import LoginIcon from '../icons/LoginIcon.astro'
-import SearchIcon from '../icons/SearchIcon.astro'
-import ShopIcon from '../icons/ShopIcon.astro'
+import MenuIcon from "../icons/MenuIcon.astro";
+import LoginIcon from "../icons/LoginIcon.astro";
+import SearchIcon from "../icons/SearchIcon.astro";
+import ShopIcon from "../icons/ShopIcon.astro";
 ---
 
-        <header
-            class="fixed top-0 left-0 right-0 w-screen h-20 p-7 z-50 bg-black overflow-hidden"
-        >
-            <nav class="flex flex-row justify-between items-center text-customGray">
-                <div>
-                    <button class="mr-2">
-                        <MenuIcon />
-                    </button>
-                    <button>
-                        <SearchIcon />
-                    </button>
-                </div>
-                <span>Logo</span>
-                <div>
-                    <button class="mr-1">
-                        <a href="/auth/login">
-                        <LoginIcon />
-                    </a>
-                    </button>
-                    <button>
-                        <ShopIcon />
-                    </button>
-                </div>
-            </nav>
-        </header>
-
+<header
+    class="fixed top-0 left-0 right-0 w-screen h-20 p-7 z-50 bg-black overflow-hidden"
+>
+    <nav class="flex flex-row justify-between items-center text-customGray">
+        <div>
+            <button class="mr-2">
+                <MenuIcon />
+            </button>
+            <button>
+                <SearchIcon />
+            </button>
+        </div>
+        <span class="ms-madi-regular tracking-wider text-2xl -rotate-12">WebWish</span>
+        <div>
+            <button class="mr-1">
+                <a href="/auth/login">
+                    <LoginIcon />
+                </a>
+            </button>
+            <button>
+                <ShopIcon />
+            </button>
+        </div>
+    </nav>
+</header>
