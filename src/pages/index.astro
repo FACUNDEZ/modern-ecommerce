@@ -4,9 +4,12 @@ import { WavyBackgroundDemo } from "../components/Hero";
 import { Featured } from "../components/Featured"
 import Categories from "../components/Categories";
 import Offers from "../components/Offers";
+import News from "../components/News";
+import Stats from "../components/Stats.astro";
+import SocialMedia from "../components/SocialMedia";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="WebWish">
 	<main class="overflow-x-hidden -z-10">
 		<!-- Hero  -->
 		<WavyBackgroundDemo client:load />
@@ -23,5 +26,17 @@ import Offers from "../components/Offers";
 		<!-- Offers -->
 		<Offers client:load  />
 		<!-- Offers -->
+
+		<!-- News -->
+		<News client:load />
+		<!-- News -->
+
+		<!-- Stats -->
+		<Stats />
+		<!-- Stats -->
+
+		<!-- Social Media -->
+		<SocialMedia client:load />
+		<!-- Social Media -->
 	</main>
 </Layout>

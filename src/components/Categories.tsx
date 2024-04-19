@@ -27,11 +27,11 @@ function Categories() {
     }, []);
 
     return (
-        <section className="grid grid-cols-2 gap-5 overflow-hidden mt-6">
+        <section className="grid grid-cols-2 gap-5 overflow-hidden">
             {categories.map((product: Product, index: number) => (
                 <a href="#" key={index}>
                     <div className="relative flex justify-center items-center overflow-hidden">
-                        <img src={product.image} className="transform duration-700 ease-in-out hover:scale-105" width="480" height="600" alt={product.name} />
+                        <img src={product.image} className="transform duration-700 ease-in-out hover:scale-105" alt={product.name} />
                         <h1 className="absolute font-bold text-xl overflow-hidden">{product.name.toUpperCase()}</h1>
                     </div>
                 </a>

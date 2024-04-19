@@ -1,5 +1,6 @@
 ---
-import Header from '../components/Header.astro';
+import { Header } from "../components/Header";
+import Footer from "../components/Footer.astro";
 
 interface Props {
 	title: string;
@@ -21,12 +22,17 @@ const { title } = Astro.props;
 			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Anta&family=Bungee+Shade&family=Ms+Madi&display=swap"
+			rel="stylesheet"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header />
+		<Header client:load />
 		<slot />
+		<Footer />
 	</body>
 </html>
 <style is:global>
@@ -36,6 +42,11 @@ const { title } = Astro.props;
 		font-family: "Montserrat", sans-serif;
 		font-optical-sizing: auto;
 		font-weight: <weight>;
+		font-style: normal;
+	}
+	.ms-madi-regular {
+		font-family: "Ms Madi", cursive;
+		font-weight: bold;
 		font-style: normal;
 	}
 </style>
