@@ -1,4 +1,4 @@
-<svg
+export const ShopIcon = ()=> { return (<svg
     width="26"
     height="26"
     viewBox="0 0 24 24"
@@ -14,3 +14,5 @@
     ></path>
     <path d="M9 11v-5a3 3 0 0 1 6 0v5"></path>
 </svg>
+)
+}

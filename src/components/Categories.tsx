@@ -27,7 +27,7 @@ function Categories() {
     }, []);
 
     return (
-        <section className="grid grid-cols-2 gap-5 overflow-hidden mt-6">
+        <section className="grid grid-cols-2 gap-5 overflow-hidden">
             {categories.map((product: Product, index: number) => (
                 <a href="#" key={index}>
                     <div className="relative flex justify-center items-center overflow-hidden">
