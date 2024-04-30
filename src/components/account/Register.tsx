@@ -36,7 +36,7 @@ export const RegisterAccount = () => {
     }
 
     return (
-        <section className="mt-24">
+        <section className="mt-28 mb-20">
             <div className="flex flex-row items-center text-xs ml-7">
                 <a href="/" className="text-customGray hover:underline">Home</a>
                 <span className="mx-2">&#62;</span>

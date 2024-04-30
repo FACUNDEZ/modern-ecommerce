@@ -1,0 +1,31 @@
+---
+import type { Product } from "../../types/component.type";
+import Layout from "../../layouts/Layout.astro";
+6
+export async function getStaticPaths(category: Product) {
+
+    const categoriaABuscar = category.id
+  const data = await fetch(`https://api.escuelajs.co/api/v1/categories/${categoriaABuscar}/products`).then(response => response.json());
+
+  return data.map((category: Product) => {
+    return {
+      params: { id: category.id },
+      props: { products: data },
+    };
+  });
+}
+
+//const productos = data.filter((product: Product) => product.category.id === category.id);
+
+const { id } = Astro.params;
+const { products } = Astro.props;
+
+---
+
+<Layout title={id}>
+    <section class="py-36">
+      {products.map((product: Product) => (
+            <h1>{product.title}</h1>
+      ))}
+    </section>
+</Layout>

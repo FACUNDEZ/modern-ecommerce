@@ -3,6 +3,9 @@ export type Product = {
         title: string;
         price: number;
         images: string[];
+        category: {
+                id: number;
+        }
 }
 
 export type RegisterRequest =

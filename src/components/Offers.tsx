@@ -2,11 +2,16 @@ import { useEffect, useState, useRef } from "react";
 import { BackgroundGradient } from "../components/ui/background-gradient";
 import type { Product } from "../types/component.type";
 import { VisionIcon } from "../icons/VisionIcon";
+import { useCartStore } from "../store/cartStore";
 
 function Offers() {
     const [products, setProducts] = useState<Product[]>([]);
     const contenedorRef = useRef<HTMLDivElement>(null);
 
+    const { cart, setCurrentCart } = useCartStore(state => state)
+
+    console.log(cart)
+ 
     useEffect(() => {
         const getApi = async () => {
             try {
@@ -67,20 +72,24 @@ function Offers() {
                             <div className="flex flex-col h-full w-full pb-8">
                                 <picture className="relative w-[185px] h-[240px] object-cover">
                                         <img src={product.images[1]} alt={product.title} className="w-[185px] h-[240px] object-cover" />
-                                    <span className="absolute top-2 right-1 bg-red-600 text-customGray rounded-sm tracking-wider text-xs px-1 py-1">20 % OFF</span>
+                                    <span className="absolute top-2 right-1 bg-red-600 text-customGray rounded-sm tracking-wider text-xs px-1 py-1">30 % OFF</span>
                                 </picture>
                                 <span className="h-[40px] w-[180px] px-2 pb-2">
                                     <p className="text-sm mt-4 text-left">
                                         {product.title}
                                     </p>
                                 </span>
-                                <span className="h-1 mt-10 px-2">
-                                    <p className="text-lg font-bold text-left tracking-wide">${product.price}</p>
+                                <span className="flex flex-row gap-2 h-1 mt-10 px-2">
+                                    <s><p className="text-sm font-semibold pt-1 text-left tracking-wide">${product.price}</p></s>
+                                    <p className="text-lg font-bold text-left tracking-wide">${(product.price * 0.7).toFixed(2)}</p>
                                 </span>
                             </div>
 
                             <div className="w-[180px] flex flex-row items-center justify-between  gap-x-1 overflow-hidden">
-                                <button className="h-10 w-[75%] bg-customGray text-xs tracking-wider font-medium text-black rounded-[1px] hover:bg-gray-200 duration-200">
+                                <button onClick={() => setCurrentCart({
+                                        products: [...cart.products, product],
+                                        price: cart.price + parseFloat((product.price * 0.7).toFixed(2))
+                                    })} className="h-10 w-[75%] bg-customGray text-xs tracking-wider font-medium text-black rounded-[1px] hover:bg-gray-200 duration-200">
                                     BUY
                                 </button>
                                 <button className="h-10 w-[25%] pl-[12px] text-customGray border border-customGray rounded-[1px] hover:bg-gray-200 hover:text-black duration-200 hover:border-gray-200"><VisionIcon /></button>
