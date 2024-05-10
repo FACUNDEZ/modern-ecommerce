@@ -22,7 +22,7 @@ export const ShopBar = ({ isOpen, onClose }: { isOpen: boolean, onClose: (value:
             <div className="flex flex-row items-center justify-center gap-x-1 border border-customGray py-2 mx-6 mt-4 rounded-[1px]">
                 <span><InfoIcon /></span><p className="text-sm">Your cart is empty.</p>
             </div>
-            <button className="block m-auto w-[452px] mt-10 py-2 bg-customGray tracking-wide text-sm font-medium text-black rounded-[1px] hover:bg-gray-200 duration-200">
+            <button className="block m-auto w-[460px] mt-10 py-2 bg-customGray tracking-wide text-sm font-medium text-black rounded-[1px] hover:bg-gray-200 duration-200">
                 BUY NOW
             </button>
         </div>

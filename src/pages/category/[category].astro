@@ -1,31 +1,50 @@
 ---
-import type { Product } from "../../types/component.type";
+import { Product } from "../../types/component.type";
 import Layout from "../../layouts/Layout.astro";
-6
-export async function getStaticPaths(category: Product) {
 
-    const categoriaABuscar = category.id
-  const data = await fetch(`https://api.escuelajs.co/api/v1/categories/${categoriaABuscar}/products`).then(response => response.json());
-
-  return data.map((category: Product) => {
-    return {
-      params: { id: category.id },
-      props: { products: data },
-    };
-  });
+export function getStaticPaths() {
+    return [
+        { params: { category: 1 } },
+        { params: { category: 2 } },
+        { params: { category: 3 } },
+        { params: { category: 4 } },
+        { params: { category: 5 } },
+    ];
 }
 
-//const productos = data.filter((product: Product) => product.category.id === category.id);
+const { category } = Astro.params;
 
-const { id } = Astro.params;
-const { products } = Astro.props;
-
+const data = await fetch(
+    `https://api.escuelajs.co/api/v1/categories/${category}/products`,
+).then((response) => response.json());
+console.log(data);
 ---
 
-<Layout title={id}>
-    <section class="py-36">
-      {products.map((product: Product) => (
-            <h1>{product.title}</h1>
-      ))}
+<Layout title="Products">
+    <section class="">
+        {data.map((product: Product) => (
+        <div class="p-4 w-[180px] h-full last:mr-11">
+            <div class="flex flex-col h-full w-full pb-8">
+                <picture class="w-[185px] h-[240px] object-cover">
+                        <img src={product.images[1]} alt={product.title} class="w-[185px] h-[240px] object-cover" />
+                </picture>
+                <span class="h-[40px] w-[180px] px-2 pb-2">
+                    <p class="text-sm mt-4 text-left">
+                        {product.title}
+                    </p>
+                </span>
+                <span class="h-1 mt-10 px-2">
+                    <p class="text-lg font-bold text-left tracking-wide">${product.price}</p>
+                </span>
+            </div>
+
+            <div class="w-[180px] flex flex-row items-center justify-between  gap-x-1 overflow-hidden">
+                <button class="h-10 w-[75%] bg-customGray text-xs tracking-wider font-medium text-black rounded-[1px] hover:bg-gray-200 duration-200">
+                    BUY
+                </button>
+                <button class="h-10 w-[25%] pl-[12px] text-customGray border border-customGray rounded-[1px] hover:bg-gray-200 hover:text-black duration-200 hover:border-gray-200">D</button>
+            </div>
+        </div>
+        ))}
     </section>
 </Layout>

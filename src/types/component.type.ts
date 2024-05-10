@@ -5,6 +5,7 @@ export type Product = {
         images: string[];
         category: {
                 id: number;
+                name: string;
         }
 }
 
